@@ -3,10 +3,11 @@ import numpy as np
 import pandas as pd
 import os
 
-def analyze_local_videos(folder_name="videos"):
-    summary_data = []
-    desktop_path = os.path.expanduser("~/Documents/soundwaves/visuals")
-    folder_path = os.path.join(desktop_path, folder_name)
+def generate_consolidated_motion_series(folder_name="videos"):
+    # Path(__file__).resolve().parent gets the directory of this script
+    folder_path = Path(__file__).resolve().parent / folder_name
+    
+    return folder_path
     
     if not os.path.exists(folder_path):
         print(f"❌ Error: Folder '{folder_name}' not found on Desktop.")
